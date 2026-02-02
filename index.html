@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Priyanshu 💙</title>
+<style>
+body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;
+background:linear-gradient(#ff9a9e,#fad0c4);font-family:'Comic Sans MS',cursive;}
+.card{background:white;padding:25px;width:350px;text-align:center;border-radius:20px;}
+button{padding:10px 18px;border:none;border-radius:12px;font-size:16px;margin:6px;}
+#yes{background:#ff5f7e;color:white;}
+#no{background:#ccc;position:relative;}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>Hey Priyanshu 💕</h2>
+<p>Will you be mine? 💖</p>
+<button id="yes" onclick="go()">Yes 😘</button>
+<button id="no" onclick="fly()">No 😜</button>
+<p id="msg"></p>
+</div>
+
+<script>
+let c=0;
+const msgs=["Are you serious? 🥺","Think again 💔","Last chance 😭"];
+function fly(){
+ const no=document.getElementById("no");
+ no.style.position="absolute";
+ no.style.left=Math.random()*250+"px";
+ no.style.top=Math.random()*250+"px";
+ document.getElementById("msg").innerText=msgs[c++]||"You can't say no 😘";
+}
+function go(){ window.location.href="page3.html"; }
+function go(){
+  window.location.href = "page3.html";
+}
+</script>
+</body>
+</html>

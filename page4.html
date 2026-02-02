@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For You 💌</title>
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(#ff9a9e,#fad0c4);
+  font-family:'Comic Sans MS',cursive;
+  overflow:hidden;
+}
+.card{
+  background:white;
+  padding:25px;
+  width:350px;
+  text-align:center;
+  border-radius:20px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+#envelope{
+  font-size:80px;
+  cursor:pointer;
+  transition:0.3s;
+}
+#envelope:hover{transform:scale(1.1);}
+.hidden{display:none;}
+
+textarea{
+  width:90%;
+  height:120px;
+  border-radius:10px;
+  padding:10px;
+  font-size:14px;
+}
+
+/* Confetti */
+.love{
+  position:fixed;
+  top:-20px;
+  font-size:24px;
+  animation:fall 4s linear forwards;
+}
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(360deg);}
+}
+
+</style>
+</head>
+
+<body>
+<div class="card">
+  <h3>Open Your Letter 💌</h3>
+
+  <div id="envelope" onclick="openLetter()">✉️</div>
+
+  <div id="letter" class="hidden">
+    <h4>My Letter For You 💙</h4>
+    <textarea placeholder="Toh kaisa lga sb ? soche thora skills ka use kiya jaaye tm bhi toh smjho ki hm kuch toh creativity jaante h ? Waise valentine's request accept krke hi yha tk aaye ho isliye Congratulations!!!!! my cute baby to become my valentine , I love you till infinity and will always accept you and only you as my valentine. "></textarea>
+  </div>
+</div>
+
+<script>
+function openLetter(){
+  document.getElementById("envelope").classList.add("hidden");
+  document.getElementById("letter").classList.remove("hidden");
+  confetti();
+}
+
+function confetti(){
+  const emojis=["💕","💖","💋","😍"];
+  for(let i=0;i<60;i++){
+    let e=document.createElement("div");
+    e.className="love";
+    e.innerText=emojis[Math.floor(Math.random()*emojis.length)];
+    e.style.left=Math.random()*100+"vw";
+    e.style.animationDuration=2+Math.random()*3+"s";
+    document.body.appendChild(e);
+    setTimeout(()=>e.remove(),5000);
+  }
+}
+</script>
+</body>
+</html>
